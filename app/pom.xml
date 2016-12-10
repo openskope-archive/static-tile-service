@@ -54,7 +54,13 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
-
+    
+        <dependency>
+            <groupId>org.openskope</groupId>
+            <artifactId>http-request-logger</artifactId>
+            <version>0.1.2-SNAPSHOT</version>
+        </dependency>
+        
     </dependencies>
 
     <build>
