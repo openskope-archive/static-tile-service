@@ -15,8 +15,8 @@ public class StaticRasterTileService extends WebMvcConfigurerAdapter {
     @Value("${static-tile-service.tiles-dir}")
     private String rasterTilesDir;
 
-    @Value("${static-tile-service.url}")
-    private String rasterTileServiceUrl;
+    @Value("${static-tile-service.endpoint}")
+    private String rasterTileServiceEndpoint;
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -26,7 +26,7 @@ public class StaticRasterTileService extends WebMvcConfigurerAdapter {
             String resourceLocation = (new File(rasterTilesDir)).toURI().toString();
             System.out.println("***** Tiles resource location: " + resourceLocation + " *****");
 
-            registry.addResourceHandler(rasterTileServiceUrl + "/**")
+            registry.addResourceHandler(rasterTileServiceEndpoint + "/**")
                     .addResourceLocations(resourceLocation);
         }
     }
